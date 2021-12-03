@@ -10,7 +10,7 @@
 body{
     background: linear-gradient(45deg, rgba(255,28,8,0.9) 0% ,
                                  rgba(255, 0, 81, 0.753) 100%), 
-                                url(/moi.jpg);
+                                url(https://scontent.flbv4-1.fna.fbcdn.net/v/t1.6435-9/84494874_2942659342508063_4430876085768421376_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=84a396&_nc_eui2=AeE_3pKCktyYcWvOdKK7M524La41TXv3m3strjVNe_ebewfYWzWlY_IUpYwYC9ES7UCtOvWT6VfO-XrGKqhV1nIE&_nc_ohc=sThPqtzPZuEAX-DGPkM&_nc_ht=scontent.flbv4-1.fna&oh=cac6afd4c8b179cd8cf38f8eb8b8ea29&oe=61D07108);
     background-size: auto;
     background-position: center;
     overflow: hidden;
