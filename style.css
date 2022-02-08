@@ -1,4 +1,4 @@
-*{
+*, ::after, ::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,15 +8,85 @@
 }
 
 body{
-    background: linear-gradient(45deg, rgba(255,28,8,0.9) 0% ,
-                                 rgba(255, 0, 81, 0.753) 100%), 
-                                url(https://scontent.flbv4-1.fna.fbcdn.net/v/t1.6435-9/84494874_2942659342508063_4430876085768421376_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=84a396&_nc_eui2=AeE_3pKCktyYcWvOdKK7M524La41TXv3m3strjVNe_ebewfYWzWlY_IUpYwYC9ES7UCtOvWT6VfO-XrGKqhV1nIE&_nc_ohc=sThPqtzPZuEAX-DGPkM&_nc_ht=scontent.flbv4-1.fna&oh=cac6afd4c8b179cd8cf38f8eb8b8ea29&oe=61D07108);
+    background: linear-gradient(45deg, rgba(255,28,8,0.9) 0% , rgba(255, 0, 81, 0.753) 100%);
     background-size: auto;
     background-position: center;
     overflow: hidden;
     font-family: 'Raleway',sans-serif;
 
 }
+
+
+.modal-container{
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: visibility 0.4s;
+}
+
+.modal-container.active{
+    visibility: visible;
+}
+
+.overlay{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333333d3;
+    transition: opacity 0.4s 0.2s ease-out;
+}
+
+.modal-container.active .overlay{
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
+}
+
+.modal{
+    opacity: 0;
+    height: auto;
+    width: 50%;
+    margin: 80px 50px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 50px));
+    transition: opacity 0.4s ease-out,
+    transform 0.4s ease-out;
+}
+
+.modal-container.active .modal{
+    opacity: 1;
+    transform: translate(-50%,-50%);
+    transition: opacity 0.4s 0.2s ease-out,
+    transform 0.4s 0.2s ease-out;
+}
+
+.modal p{
+    font-size: 23px;
+    line-height: 1.4;
+    margin: 5px;
+}
+
+.close-modal{
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: #ff365e;
+    color: #fff;
+}
+
+ 
 
 .container{
     display: flex ;
@@ -180,17 +250,20 @@ a.btn:hover, a.btn:focus{
 
 .copyright{
     font-size: 15px;
-    margin-top: 0.5rem;
+    margin: 0.5rem;
 }
 
-@media (max-width: 500px){
-    html{
-        font-size: 50%;
+@media screen and (max-width: 590px ) {
+    .container strong{
+        font-size: 60px;
     }
-}    
 
-@media(min-width: 501px) and (max-width: 768px){
-    html{
-    font-size: 50%;
+    .modal p{
+        font-size: 16px;
     }
-}    
+
+    .modal{
+        height: 500px;
+        
+    }
+}
